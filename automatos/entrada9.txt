@@ -1,0 +1,9 @@
+estados A C M P 
+inicial A
+aceita M
+A 1 P
+C 0 M
+C 0 C
+M 1 C
+M 0 A
+P 1 M

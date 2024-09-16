@@ -1,0 +1,19 @@
+estados ø A B C AB AC BC ABC
+inicial AC
+aceita A AB AC ABC
+ø 0 ø
+ø 1 ø
+A 0 ø
+A 1 B
+B 0 BC
+B 1 C
+C 0 AC
+C 1 ø
+AB 0 BC
+AB 1 BC
+AC 0 AC
+AC 1 B
+BC 0 ABC
+BC 1 C
+ABC 0 ABC
+ABC 1 BC
