@@ -69,7 +69,7 @@ siginifcando que a transição leva do estado1 para o estado2 lendo o símbolo d
 Um exemplo de arquivo de entrada seria:
 
 ```{text}
-estados A B
+estados A B C
 inicial A
 aceita B
 A 0 B
@@ -80,22 +80,3 @@ A 1 C
 ```
 
 Todos os autômatos que serão testados terão esse formato. Use o símbolo h para denotar o símbolo vazio.
-
-## Simulador (obrigatório)
-
-O simulador deverá receber na entrada o nome de um arquivo contendo a descrição do autômato e a entrada que será processada pelo autômato. Por exemplo:
-
-```{text}
-$nome_do_executável arquivo_do_automato 101
-```
-
-Imprima um traço na tela mostrando em qual estado o autômato se encontra e o que falta ler. Ao final diga se a palavra foi aceita ou não. Por exemplo, para o autômato acima a saída poderia ser:
-
-```{text}
-Estado           Palavra
-A                101
-A                01
-B                1
-B                e
-A palavra foi aceita
-````
