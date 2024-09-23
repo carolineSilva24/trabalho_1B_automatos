@@ -17,7 +17,7 @@ def saidaAuto(lista_estados, inicial, lista_aceita, lista_transicao):
     # Adiciona transições à saída
     transicoes = []
     for elemento in lista_transicao:
-        transicoes.append(f"{elemento[0]} {elemento[2]} {elemento[1]}")
+        transicoes.append(f"{elemento[0]} {elemento[2]} {''.join(elemento[1])}")
     result += "\n" + "\n".join(transicoes)
     
     return result
