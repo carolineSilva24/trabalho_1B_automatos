@@ -1,4 +1,5 @@
 # coding: utf-8
+# from graphviz import Digraph
 
 def saidaAuto(lista_estados, inicial, lista_final, lista_transicao):
     result = "\nAutomato: \n\nestados "
@@ -35,3 +36,34 @@ def afn_checker(lista_transicao, lista_estados):
         else:
             count = 0  
     return False
+
+# Função para desenhar o autômato (AFND ou AFD)
+# def desenhar_automato(maquina, nome_arquivo):
+#     dot = Digraph(comment="Autômato")
+
+#     estados = maquina["estados"]
+#     estado_inicial = maquina["inicial"]
+#     estados_finais = maquina["final"]
+#     transicoes = maquina["transicao"]
+
+#     # Adiciona estados
+#     for estado in estados:
+#         if estado == estado_inicial:
+#             dot.node(estado, shape="doublecircle", color="green")  # Estado inicial
+#         elif estado in estados_finais:
+#             dot.node(estado, shape="doublecircle", color="red")  # Estado final
+#         else:
+#             dot.node(estado, shape="circle")
+
+#     # Adiciona transições
+#     for transicao in transicoes:
+#         estado_origem = "".join(transicao[0])
+#         estado_destino = "".join(transicao[1])
+#         simbolo = transicao[2]
+
+#         dot.edge(estado_origem, estado_destino, label=simbolo)
+
+#     # Salva o arquivo do Graphviz
+#     dot.render(nome_arquivo, format="png")  # Salva como imagem PNG
+
+#     print(f"Arquivo {nome_arquivo}.png gerado com sucesso.")
