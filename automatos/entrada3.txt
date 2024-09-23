@@ -1,6 +1,6 @@
 estados E P
 inicial E
-aceita P
+final P
 E 0 P
 P 0 E
 E 1 E

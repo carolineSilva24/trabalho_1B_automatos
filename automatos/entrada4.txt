@@ -1,13 +1,15 @@
-estados N A1 B1 A2 B2 C2
-inicial N
-aceita B1 C2
-N h A1
-N h A2
-A1 0 B1
-B1 0 A1
-A1 1 A1
-B1 1 B1
-A2 0 B2
-A2 0 A2
-A2 1 A2
-B2 1 C2
+estados S A B C D E
+inicial S
+final E
+S h A
+S h C
+S 0 A
+S 1 D
+A 0 B
+B 0 A
+A 1 A
+B 1 B
+C 0 D
+C 0 C
+C 1 C
+D 0 E

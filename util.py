@@ -1,18 +1,17 @@
 # coding: utf-8
 
-# não consigo azer com que o resultado fique no formato A 0 B, está ficando A 0 ['B']
-def saidaAuto(lista_estados, inicial, lista_aceita, lista_transicao):
+def saidaAuto(lista_estados, inicial, lista_final, lista_transicao):
     result = "\nAutomato: \n\nestados "
     inicial_saida = "inicial " + inicial
-    aceita = "aceita "
+    final = "final "
     
     # Adiciona estados à saída
     result += " ".join(lista_estados)
     result += "\n" + inicial_saida
     
-    # Adiciona estados de aceitação à saída
-    aceita += " ".join(lista_aceita)
-    result += "\n" + aceita
+    # Adiciona estados de finalção à saída
+    final += " ".join(lista_final)
+    result += "\n" + final
     
     # Adiciona transições à saída
     transicoes = []

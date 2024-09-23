@@ -4,7 +4,7 @@ def conversao(maquina_1):
     result = {}
     new_estados = geraEstados(maquina_1["estados"])
     inicial = geraIncial(maquina_1, new_estados)
-    new_aceitacao = geraAceita(maquina_1["aceita"], new_estados)
+    new_aceitacao = geraAceita(maquina_1["final"], new_estados)
     transicoes = geraTransicao(maquina_1["transicao"], new_estados)
     estados_final = organizaEstados(new_estados)
     inicial_final = "".join(inicial)
@@ -12,20 +12,24 @@ def conversao(maquina_1):
     transicoes_final = organizaTransicoes(transicoes)
     result["estados"] = organizaEstados(new_estados)
     result["inicial"] = "".join(inicial)
-    result["aceita"] = organizaEstados(new_aceitacao)
+    result["final"] = organizaEstados(new_aceitacao)
     result["transicao"] = organizaTransicoes(transicoes)
     return result
 
 def organizaEstados(new_estados):
     result = []
     for elemento in new_estados:
-        result.append("".join(elemento))
+        estado_atual = "".join(elemento)
+        if estado_atual not in result:
+            result.append(estado_atual)
     return result
 
 def organizaTransicoes(transicoes):
     result = []
     for elemento in transicoes:
-        result.append(["".join(elemento[0]), elemento[1], "".join(elemento[2])]) # tentativa de colocar estado 1 simbolo estado 2
+      transicao_atual = ["".join(elemento[0]), elemento[1], "".join(elemento[2])]
+      if transicao_atual not in result:
+          result.append(transicao_atual)
     return result
 
 def geraAceita(list_aceita, new_estados):
@@ -41,12 +45,16 @@ def geraTransicao(list_transicao, new_estados):
     result = []
     alfabeto = []
     casos_epson = []
+
+    # identificando os simbolos no alfabeto e as transições vazias
     for transicao in list_transicao:
         if transicao[2] != "h" and transicao[2] not in alfabeto: # mudei para h transição vazia
             alfabeto.append(transicao[2])
         if transicao[2] == "h":
             casos_epson.append(transicao)
-    alfabeto.sort()
+
+    alfabeto.sort() # Ordena os simbolos do alfabeto
+
     for estado in new_estados:
         for entrada in alfabeto:
             aux = []
@@ -56,9 +64,13 @@ def geraTransicao(list_transicao, new_estados):
                     if([elemento[1], elemento[0], "h"] in casos_epson and elemento[0] not in aux):
                         aux.append(elemento[0])
             aux.sort()
-            if aux in new_estados:
-                result.append([estado, aux, entrada]) # mudei a ordem
-            elif len(aux) == 0:
+            
+            # evitando transições duplicadas
+            transicao_atual = [estado, aux, entrada]
+            if transicao_atual not in result:
+              if aux in new_estados:
+                result.append(transicao_atual) 
+              elif len(aux) == 0:
                 result.append([estado, ["h"], entrada]) # ø estado vazio, n vai para lugar nenhum
     return result
 

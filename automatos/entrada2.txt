@@ -1,6 +1,6 @@
 estados A B C
 inicial A
-aceita C
+final C
 A 0 B
 A 1 A
 B 1 A 

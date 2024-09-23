@@ -1,9 +1,11 @@
 estados A C M P 
 inicial A
-aceita M
+final M
 A 1 P
+A 0 C
 C 0 M
 C 0 C
 M 1 C
 M 0 A
 P 1 M
+P 0 P

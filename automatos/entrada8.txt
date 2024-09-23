@@ -1,6 +1,6 @@
 estados ø A B C AB AC BC ABC
 inicial AC
-aceita A AB AC ABC
+final A AB AC ABC
 ø 0 ø
 ø 1 ø
 A 0 ø

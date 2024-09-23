@@ -2,21 +2,8 @@
 
 A projeto foi feito usando `python3`. E para executar comando deve ser de acordo com os exemplos a seguir.
 
-### Simulador
 
-O simulador deve receber a entrada no seguinte formato:
-
-```{shell}
-$ python3 main.py -s arquivo.txt palavra
-```
-
-exemplo de aplicação:
-
-```{shell}
-$ python3 main.py -s automatos/entrada.txt 101
-```
-
-### Transformação
+### Transformação(conversão)
 
 A Operação de Transformação deve receber a entrada no seguinte formato:
 
@@ -43,7 +30,7 @@ Antes de ser realizada a verificação é feita a verificação se o automato es
 exemplo de aplicação:
 
 ```{shell}
-$ python3 main.py -l automatos/entrada.txt automatos/palavras.txt
+$ python3 main.py -v automatos/entrada.txt automatos/palavras.txt
 ```
 
 ### Formato do arquivo de entrada
@@ -65,7 +52,7 @@ Note que estados, inicial e aceita são palavras reservadas.
 estado1 simbolo(alfabeto) estado2
 ````
 
-siginifcando que a transição leva do estado1 para o estado2 lendo o símbolo do alfabeto.
+significando que a transição leva do estado1 para o estado2 lendo o símbolo do alfabeto.
 Um exemplo de arquivo de entrada seria:
 
 ```{text}
@@ -81,21 +68,3 @@ A 1 C
 
 Todos os autômatos que serão testados terão esse formato. Use o símbolo h para denotar o símbolo vazio.
 
-## Simulador (obrigatório)
-
-O simulador deverá receber na entrada o nome de um arquivo contendo a descrição do autômato e a entrada que será processada pelo autômato. Por exemplo:
-
-```{text}
-$nome_do_executável arquivo_do_automato 101
-```
-
-Imprima um traço na tela mostrando em qual estado o autômato se encontra e o que falta ler. Ao final diga se a palavra foi aceita ou não. Por exemplo, para o autômato acima a saída poderia ser:
-
-```{text}
-Estado           Palavra
-A                101
-A                01
-B                1
-B                e
-A palavra foi aceita
-````

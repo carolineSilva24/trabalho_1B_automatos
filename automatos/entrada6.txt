@@ -1,8 +1,9 @@
 estados A B C D
 inicial A
-aceita D
+final D
 A 0 A
 A 1 B
+A h C
 B 1 B
 B 0 C
 C 0 A
