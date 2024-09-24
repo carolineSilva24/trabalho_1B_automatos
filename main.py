@@ -4,9 +4,6 @@ import sys
 import getopt
 from conversao import conversao
 from util import saidaAuto, afn_checker
- # from util import desenhar_automato
- # from graphviz import Digraph
-
 maquina = {}
 
 def usage():
@@ -150,14 +147,6 @@ def main():
             if (check):
                 new_maquina = conversao(maquina)
                 print(saidaAuto(new_maquina["estados"], new_maquina["inicial"], new_maquina["final"], new_maquina["transicao"]))
-                # # Carrega o AFND do arquivo
-                # afnd = ler_automato("entrada.txt")  # Substitua pelo seu método de leitura
-                # desenhar_automato(afnd, "grafo_afnd")  # Gera o grafo do AFND
-    
-                # # Converte AFND para AFD
-                # afd = conversao(afnd)  # Sua função de conversão para AFD
-                # desenhar_automato(afd, "grafo_afd")  # Gera o grafo do AFD
-
             else:
                 print("\nO automato '" + file + "' já é uma AFD, portanto, não precisa de conversão :D.\n")
        
